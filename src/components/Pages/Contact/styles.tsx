@@ -1,15 +1,21 @@
-import { styled } from '@mui/material';
-import { theme } from '../../../assets/theme';
+import { styled } from '@mui/material'
+import { theme } from '../../../assets/theme'
 
 export const Styles = styled('section')({
   width: '100%',
-  height: '96vh',
+  height: 'auto',
+  minHeight: '80vh',
   marginTop: 4,
+  h2: {
+    paddingTop: '16px',
+    paddingLeft: '32px',
+  },
   display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: theme.palette.success.contrastText,
-  backgroundColor: theme.palette.success.light,
-});
+  flexDirection: 'column',
+  alignItems: 'start',
+  justifyContent: 'start',
+  color: theme.palette.secondary.contrastText,
+  backgroundColor: theme.palette.secondary.main,
+})
 
 export default Styles

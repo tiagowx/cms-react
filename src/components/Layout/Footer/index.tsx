@@ -19,7 +19,6 @@ const Styles = styled('footer')({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  position: 'fixed',
   bottom: 0,
   borderTop: `4px solid ${theme.palette.primary.contrastText}`,
   color: theme.palette.primary.contrastText,

@@ -1,14 +1,14 @@
 import React from 'react';
 import Layout from '../../Layout';
 import { Contact } from '../Contact';
-import { Products } from '../Products';
+import { Solutions } from '../Solutions';
 import { Tread } from './Tread';
 
 const Home = () => {
   return (
     <Layout>
       <Tread />
-      <Products />
+      <Solutions />
       <Contact />
     </Layout>
   );
