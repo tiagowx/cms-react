@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, styled } from '@mui/system'
-import { theme } from '../../../assets/theme'
+import theme from '@/assets/theme'
 import { Styles } from './Styles'
 import { Typography } from '@mui/material'
 

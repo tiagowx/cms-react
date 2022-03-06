@@ -2,8 +2,9 @@ import React from 'react'
 import { Container, Grid, Typography } from '@mui/material'
 import Styles from './styles'
 import { Box, breakpoints } from '@mui/system'
-import { theme } from '../../../assets/theme'
+import theme  from '@/assets/theme'
 import { Subscription } from './Subscription'
+import { FormContact } from './FormContact'
 
 export const Contact = () => {
   return (
@@ -28,12 +29,12 @@ export const Contact = () => {
             borderRadius: '16px',
             margin: '4px',
             flex:3,
-            [theme.breakpoints.up('md')]: {
+            [theme.breakpoints.up('sm')]: {
               width: 'auto',
             },
           }}
         >
-          //asdasdasd
+          <FormContact />
         </Box>
         <Box
           component="div"
@@ -42,7 +43,7 @@ export const Contact = () => {
             minHeight: '40vh',
             borderRadius: '16px',
             margin: '4px',
-            [theme.breakpoints.up('md')]: {
+            [theme.breakpoints.up('sm')]: {
               flex:1
             },
           }}

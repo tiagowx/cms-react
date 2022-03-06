@@ -1,7 +1,7 @@
 import { Grid, Typography } from '@mui/material'
 import { Box, styled } from '@mui/system'
 import React from 'react'
-import { theme } from '../../../assets/theme'
+import theme from '@/assets/theme'
 
 const Footer = () => {
   return (

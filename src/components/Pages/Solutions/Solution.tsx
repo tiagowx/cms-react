@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Grid, Paper, Typography } from '@mui/material'
 import { ISolutions } from '@/interfaces/models/solutions'
-import { theme } from '../../../assets/theme'
+import theme from '@/assets/theme'
 
 export const Solution: React.FC<ISolutions> = (item: ISolutions) => {
   function _alignText(id: number) {

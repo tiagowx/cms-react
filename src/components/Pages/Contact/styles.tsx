@@ -1,5 +1,5 @@
 import { styled } from '@mui/material'
-import { theme } from '../../../assets/theme'
+import theme from '@/assets/theme'
 
 export const Styles = styled('section')({
   width: '100%',

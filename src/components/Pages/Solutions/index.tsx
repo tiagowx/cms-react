@@ -5,7 +5,7 @@ import { Solution } from './Solution'
 import { Main, } from './styles'
 
 import itemsSolutions from '../../../interfaces/mocks/_mocks'
-import { theme } from '../../../assets/theme'
+import theme from '@/assets/theme'
 
 export const Solutions: React.FC = (item) => {
   return (

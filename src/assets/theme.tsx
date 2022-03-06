@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 
 
-export const theme = createTheme({});
+const theme = createTheme({});
+
+export default theme;
 

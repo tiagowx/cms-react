@@ -9,24 +9,9 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
-import { theme } from '../../../assets/theme'
+import  theme  from '../../../assets/theme'
 import { styled } from '@mui/system'
 
-const ValidationTextField = styled(TextField)({
-  color: theme.palette.success.contrastText,
-  '& input:valid + fieldset': {
-    borderColor: theme.palette.success.light,
-    borderWidth: 2,
-  },
-  '& input:invalid + fieldset': {
-    borderColor: 'red',
-    borderWidth: 2,
-  },
-  '& input:valid:focus + fieldset': {
-    borderLeftWidth: 6,
-    padding: '4px !important', // override inline-style
-  },
-})
 
 export const Subscription = () => {
   return (
