@@ -3,6 +3,7 @@ import { Container, Grid, Typography } from '@mui/material'
 import Styles from './styles'
 import { Box, breakpoints } from '@mui/system'
 import { theme } from '../../../assets/theme'
+import { Subscription } from './Subscription'
 
 export const Contact = () => {
   return (
@@ -13,7 +14,6 @@ export const Contact = () => {
       <Container
         sx={{
           display: 'flex',
-          flex: 1,
           [theme.breakpoints.down('md')]: {
             flexDirection: 'column',
           },
@@ -27,8 +27,9 @@ export const Contact = () => {
             minHeight: '40vh',
             borderRadius: '16px',
             margin: '4px',
+            flex:3,
             [theme.breakpoints.up('md')]: {
-              width: '50%',
+              width: 'auto',
             },
           }}
         >
@@ -42,11 +43,11 @@ export const Contact = () => {
             borderRadius: '16px',
             margin: '4px',
             [theme.breakpoints.up('md')]: {
-              width: '50%',
+              flex:1
             },
           }}
         >
-          //asdasdasd
+            <Subscription />
         </Box>
       </Container>
     </Styles>
