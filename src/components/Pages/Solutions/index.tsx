@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import { ISolutions } from '@/interfaces/models/solutions'
 import { Box, Grid, Typography } from '@mui/material'
 import { Solution } from './Solution'
 import { Main, } from './styles'
 
 import itemsSolutions from '../../../interfaces/mocks/_mocks'
-import theme from '@/assets/theme'
+import theme from '../../../assets/theme'
 
 export const Solutions: React.FC = (item) => {
   return (

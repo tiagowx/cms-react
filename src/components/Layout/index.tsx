@@ -4,7 +4,7 @@ import React from 'react'
 import Footer from './Footer'
 import Header from './Header'
 
-import theme from '@/assets/theme'
+import theme from '../../assets/theme'
 
 const Layout: React.FC = ({ children }) => {
   return (

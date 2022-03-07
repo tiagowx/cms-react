@@ -1,4 +1,5 @@
-import theme from '@/assets/theme'
+import React from 'react'
+import theme from '../../../assets/theme'
 import {
   Box,
   Button,
@@ -9,7 +10,6 @@ import {
   Typography,
 } from '@mui/material'
 import { breakpoints } from '@mui/system'
-import React from 'react'
 
 export const FormContact = () => {
   return (

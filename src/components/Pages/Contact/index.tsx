@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Grid, Typography } from '@mui/material'
 import Styles from './styles'
 import { Box, breakpoints } from '@mui/system'
-import theme  from '@/assets/theme'
+import theme  from '../../../assets/theme'
 import { Subscription } from './Subscription'
 import { FormContact } from './FormContact'
 
