@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Box, Grid, Typography } from '@mui/material'
+import React from 'react'
+import { Grid, Typography } from '@mui/material'
 import { Solution } from './Solution'
 import { Main, } from './styles'
 
@@ -7,6 +7,7 @@ import itemsSolutions from '../../../interfaces/mocks/_mocks'
 import theme from '../../../assets/theme'
 
 export const Solutions: React.FC = (item) => {
+
   return (
     <Main id="solutions">
       <Typography variant="h2" component="h2">

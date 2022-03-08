@@ -1,6 +1,5 @@
 import { styled } from '@mui/system'
-import theme from '../../../assets/theme'
-import React from 'react'
+import theme from '@/assets/theme'
 
 export const Main = styled('section')({
   width: '100%',

@@ -1,4 +1,4 @@
-import { ISolutions } from "@Interfaces/models/ISolutions";
+import { ISolutions } from "@/interfaces/models/ISolutions";
 
 let itemsSolutions: ISolutions[] = [
   {

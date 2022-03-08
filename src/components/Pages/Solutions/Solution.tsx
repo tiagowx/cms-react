@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Grid, Paper, Typography } from '@mui/material'
+import { Grid, Paper, Typography } from '@mui/material'
 import { ISolutions } from '../../../interfaces/models/ISolutions'
 import theme from '../../../assets/theme'
 

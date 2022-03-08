@@ -10,6 +10,7 @@ import {
   Typography,
 } from '@mui/material'
 import { styled } from '@mui/system'
+import theme from '@/assets/theme'
 
 
 export const Subscription = () => {
@@ -21,7 +22,14 @@ export const Subscription = () => {
         display: 'flex',
         height: '100%',
         flexDirection: 'column',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        backgroundColor: `${theme.palette.secondary.light}`,
+        minHeight: '50vh',
+        borderRadius: '16px',
+        margin: '4px',
+        [theme.breakpoints.up('sm')]: {
+          flex: 1
+        },
       }}
     >
       <Typography
@@ -43,6 +51,7 @@ export const Subscription = () => {
           <TextField
             required
             fullWidth
+            size="small"
             color="secondary"
             id="sub-name"
             label="Nome"
@@ -52,6 +61,7 @@ export const Subscription = () => {
           <TextField
             required
             fullWidth
+            size="small"
             color="secondary"
             id="sub-email"
             label="Email"

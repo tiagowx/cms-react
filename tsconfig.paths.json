@@ -8,12 +8,6 @@
       "@/*": [
         "src/*"
       ],
-      "@Assets/*": [
-        "src/assets/*"
-      ],
-      "@Interfaces/models/*": [
-        "src/interfaces/models/*"
-      ]
     }
   }
 }
