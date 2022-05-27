@@ -8,35 +8,36 @@ import {
   MenuItem,
   Paper,
   Select,
-  SelectChangeEvent,
-  TextField,
   Typography,
 } from '@mui/material'
+//@houston
+import useForm from '@eduzz/houston-forms/useForm'
+import TextField from '@eduzz/houston-ui/Forms/Text';
+import Form from '@eduzz/houston-ui/Forms/Form'
+
 import { ChangeEvent, useState } from 'react'
+import textCounter from '@/helpers/textCounter';
 
 export const FormContact = () => {
-  const [contact, setContact] = useState<IContact | undefined>(undefined);
 
-  const [sender, setSender] = useState('')
-  const [email, setEmail] = useState('')
-  const [content, setContent] = useState('')
-  const [subject, setSubject] = useState('')
-  const [typeSubject, setTypeSubject] = useState('1')
+  const form = useForm<IContact>({
+    validationSchema: yup =>
+      yup.object().shape({
+        sender: yup.string().required().min(3).max(250),
+        email: yup.string().required().email().max(250),
+        typeSubject: yup.number().required(),
+        subject: yup.string().required().min(3).max(250),
+        content: yup.string().required().min(3).max(1000),
+      }),
+    async onSubmit(model): Promise<void> {
+      await undefined;
+    }
+  })
 
   const handleContact = (event: ChangeEvent<HTMLInputElement>) => {
-    setContact({
-      sender,
-      email,
-      content,
-      subject,
-      typeSubject: 1
-    })
-  }
+    console.log(form.toString())
 
-  const handleChangeTypeSubject = (event: SelectChangeEvent) => {
-    setTypeSubject(event.target.value);
   }
-
   return (
     <Box
       component="form"
@@ -66,129 +67,107 @@ export const FormContact = () => {
       >
         Nos envie uma mensagem!
       </Typography>
-      <Paper
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '16px',
-          borderRadius: '16px',
-        }}
-      >
-        <Box
+      <Form context={form}  className={'className'}>
+        <Paper
           sx={{
-            width: '100%',
             display: 'flex',
-            flex: '1',
-            flexDirection: 'row',
-            justifyContent: 'space-around',
-            [theme.breakpoints.down('sm')]: {
-              flexDirection: 'column'
-            }
-          }}>
-          <TextField
-            size="small"
-            sx={{
-              flex: 1,
-              margin: 1
-            }}
-            id="form-contact-name"
-            label="Nome"
-            color="secondary"
-            value={sender}
-          />
-          <TextField
-            size="small"
-            sx={{
-              flex: 1,
-              margin: 1
-            }}
-            id="form-contact-email"
-            label="E-mail"
-            color="secondary"
-            value={email}
-          />
-        </Box>
-        <Box
-          sx={{
-            width: '100%',
-            display: 'flex',
-            flex: '2',
-            flexDirection: 'row',
-            justifyContent: 'space-around',
-            [theme.breakpoints.down('sm')]: {
-              flexDirection: 'column'
-            }
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '16px',
+            borderRadius: '16px',
           }}
         >
-          <TextField
-            size="small"
+          <Box
             sx={{
-              flex: 1,
-              margin: 1
-            }}
-            id="form-contact-name"
-            label="Título"
-            color="secondary"
-            value={subject}
-          />
-          <Box sx={{
-            flex: 1,
-            margin: 1
-          }}>
-            <FormControl fullWidth>
-              <InputLabel sx={{ justifyContent: 'start' }} id="formContact-typeSubject-label" color="secondary">Tipo de Assunto</InputLabel>
-              <Select
-                labelId="formContact-typeSubject-label"
-                size="small"
-                id="formContact-typeSubject"
-                color="secondary"
-                value={typeSubject}
-                label="Tipo de Assunto"
-                onChange={handleChangeTypeSubject}
-              >
-                <MenuItem value={1}>Dúvidas</MenuItem>
-                <MenuItem value={2}>Feedback</MenuItem>
-                <MenuItem value={3}>Suporte</MenuItem>
-                <MenuItem value={4}>Outro</MenuItem>
-              </Select>
-            </FormControl>
+              width: '100%',
+              display: 'flex',
+              flex: '1',
+              flexDirection: 'row',
+              justifyContent: 'space-around',
+              [theme.breakpoints.down('sm')]: {
+                flexDirection: 'column'
+              }
+            }}>
+            <TextField
+              label="Nome"
+              name='sender'
+              helperText={form.values.sender}
+            />
+
+            <TextField
+              name='email'
+              label='Email'
+              type='email'
+              helperText={form.values.email} />
           </Box>
-        </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            width: '100%',
-          }}
-        >
-          <TextField
-            size="small"
-            fullWidth
-            multiline
-            maxRows={4}
-            rows={4}
+          <Box
             sx={{
-              margin: 1
+              width: '100%',
+              display: 'flex',
+              flex: '1',
+              flexDirection: 'row',
+              justifyContent: 'space-around',
+              [theme.breakpoints.down('sm')]: {
+                flexDirection: 'column'
+              }
             }}
-            id="form-contact-subject"
-            label="Menssagem"
-            color="secondary"
-            value={content}
-          />
-        </Box>
-      </Paper>
-      <Button
-        color="info"
-        sx={{
-          marginTop: '16px',
-          borderRadius: '16px',
-          fontWeight: 'bold',
-        }}
-        variant="contained"
-      >
-        Enviar Mensagem
-      </Button>
+          >
+            <TextField
+              size="small"
+              id="form-contact-name"
+              label="Título"
+            />
+            <Box sx={{
+              flex: 1,
+              margin: 1
+            }}>
+              <FormControl fullWidth>
+                <InputLabel sx={{ justifyContent: 'start' }} id="formContact-typeSubject-label" color="secondary">Tipo de Assunto</InputLabel>
+                <Select
+                  labelId="formContact-typeSubject-label"
+                  size="small"
+                  id="formContact-typeSubject"
+                  color="secondary"
+                  label="Tipo de Assunto"
+                >
+                  <MenuItem value={1}>Dúvidas</MenuItem>
+                  <MenuItem value={2}>Feedback</MenuItem>
+                  <MenuItem value={3}>Suporte</MenuItem>
+                  <MenuItem value={4}>Outro</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              width: '100%',
+            }}
+            >
+            <TextField
+              size="small"
+              fullWidth
+              multiline
+              rows={4}
+              id="form-contact-subject"
+              label="Menssagem"
+            />
+          </Box>
+        </Paper>
+        <Button
+          color="info"
+          sx={{
+            marginTop: '16px',
+            borderRadius: '16px',
+            fontWeight: 'bold',
+          }}
+          variant="contained"
+          onClick={() => handleContact}
+          >
+          Enviar Mensagem
+        </Button>
+          </Form>
     </Box>
   )
 }

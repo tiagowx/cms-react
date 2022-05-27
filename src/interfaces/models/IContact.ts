@@ -1,7 +1,7 @@
 export interface IContact {
   id?: number;
-  sender: string;
-  email: string;
+  sender?: string;
+  email?: string;
   subject: string;
   typeSubject?: enTypeSubject;
   content: string;
